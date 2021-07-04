@@ -3,5 +3,7 @@
 ## Author: Grawr
 ## Interface: 90100
 
+Libs\embeds.xml
+Libs\LibDBIcon-1.0\lib.xml
 Logger.lua
 Main.lua
