@@ -1,0 +1,25 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "files.autoSave": "onWindowChange",
+    "fsdeploy.nodes": [
+        {
+            "source": "",
+            "target": "C:\\Program Files (x86)\\World of Warcraft\\_retail_\\Interface\\AddOns\\CodexCount",
+            "include": "**/*.*",
+            "exclude": "{**/.*/**,**/.*,README.md}",
+            "deleteTargetOnDeploy": true,
+        }
+    ],
+    "fsdeploy.deployOnSave": true,
+    "fsdeploy.deployWorkspaceOnSave": true,
+    "lua.format.indentCount": 2,
+    "lua.format.lineWidth": 160,
+    "Lua.diagnostics.globals": [
+        // Globals from the WoW API not included in the WoW API Plugin
+        "NUM_BAG_SLOTS",
+    ],
+    "Lua.workspace.ignoreDir": [
+        "Libs/**"
+    ]
+}
