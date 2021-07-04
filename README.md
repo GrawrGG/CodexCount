@@ -2,6 +2,8 @@
  
 Counts the number of `Cataloged Research` currently in your bag, so you know how much reputation you will gain with `The Archivists' Codex` faction.
 
+![image](https://user-images.githubusercontent.com/81110548/124400147-5e1c7480-dcd5-11eb-9a8f-b52af47d3230.png)
+
 ## Development
 ### Environment
 Recommended development environment is [VS Code](https://code.visualstudio.com/) with the following extensions:
