@@ -16,6 +16,7 @@
     "lua.format.indentCount": 2,
     "lua.format.lineWidth": 160,
     "Lua.diagnostics.globals": [
+        "CCDebugEnabled",
         "CCMinimapIcon",
         // Libs,
         "LibStub",
