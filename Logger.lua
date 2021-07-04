@@ -1,5 +1,5 @@
 local ADDON_NAME = ...
-local debuggingEnabled = true
+CCDebugEnabled = false
 
 local function logString(stmt)
   print(ADDON_NAME .. ": " .. stmt)
@@ -39,7 +39,7 @@ local function logTable(tbl)
 end
 
 local function logger(obj)
-  if (not debuggingEnabled) then
+  if (not CCDebugEnabled) then
     return
   end
   if (type(obj) == "table") then
