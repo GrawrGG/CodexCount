@@ -1,5 +1,28 @@
+local ADDON_NAME = ...
 local logger = CodexCountLogger
-local CCEvents = CreateFrame("FRAME", "CodexCount")
+local CCEvents = CreateFrame("FRAME", ADDON_NAME)
+
+local currentCount = 0
+
+local CCLDB =
+  LibStub("LibDataBroker-1.1"):NewDataObject(
+  ADDON_NAME,
+  {
+    type = "data source",
+    text = ADDON_NAME,
+    label = ADDON_NAME,
+    icon = "Interface\\Icons\\inv_relics_6orunestone_ogremissive",
+    OnTooltipShow = function(tooltip)
+      if (not tooltip or not tooltip.AddLine) then
+        return
+      end
+      local expectedRep = floor(currentCount / 2)
+      tooltip:AddLine("|cFFFFFFFF" .. ADDON_NAME .. "|r")
+      tooltip:AddLine("You have " .. currentCount .. " Cataloged Research, worth " .. expectedRep .. " reputation.")
+    end
+  }
+)
+local CCIcon = LibStub("LibDBIcon-1.0")
 
 -- Map of item ID to their Cataloged Research value
 local ITEM_VALUES = {
@@ -46,10 +69,11 @@ local function OnBagUpdated()
     end
   end
   logger.log("Updated count: " .. count)
+  currentCount = count
 end
 
 local function OnAddonLoaded(addonName)
-  if (addonName == "CodexCount") then
+  if (addonName == ADDON_NAME) then
     CCEvents:UnregisterEvent("ADDON_LOADED")
     CCEvents:RegisterEvent("BAG_UPDATE")
   end
@@ -65,6 +89,10 @@ local function HandleEvent(_, event, ...)
 end
 
 local function Init()
+  if (CCMinimapIcon == nil) then
+    CCMinimapIcon = {}
+  end
+  CCIcon:Register(ADDON_NAME, CCLDB, CCMinimapIcon)
   CCEvents:SetScript("OnEvent", HandleEvent)
   CCEvents:RegisterEvent("ADDON_LOADED")
 end

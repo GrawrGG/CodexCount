@@ -16,6 +16,9 @@
     "lua.format.indentCount": 2,
     "lua.format.lineWidth": 160,
     "Lua.diagnostics.globals": [
+        "CCMinimapIcon",
+        // Libs,
+        "LibStub",
         // Globals from the WoW API not included in the WoW API Plugin
         "NUM_BAG_SLOTS",
     ],

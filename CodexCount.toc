@@ -2,6 +2,7 @@
 ## Version: 0.0.1
 ## Author: Grawr
 ## Interface: 90100
+## SavedVariables: CCMinimapIcon
 
 Libs\embeds.xml
 Libs\LibDBIcon-1.0\lib.xml

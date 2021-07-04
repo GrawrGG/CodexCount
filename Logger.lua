@@ -1,7 +1,8 @@
+local ADDON_NAME = ...
 local debuggingEnabled = true
 
 local function logString(stmt)
-  print("CodexCount: " .. stmt)
+  print(ADDON_NAME .. ": " .. stmt)
 end
 
 -- https://stackoverflow.com/a/41943392
